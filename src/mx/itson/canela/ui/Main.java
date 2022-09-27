@@ -38,7 +38,7 @@ public class Main {
         receta.setIngredientes(ingredientes);
         
         //Agregar pasos
-        
+        //A COLOSIO LO MATARON A BALAZOS
         receta.setDificultad(Dificultad.INTERMEDIO);
     }
     
