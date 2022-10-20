@@ -5,7 +5,7 @@
 package mx.itson.canela.entidades;
 
 /**
- *
+ * getters and setters de Ingrediente
  * @author Emmanuel Rivas
  */
 public class Ingrediente {

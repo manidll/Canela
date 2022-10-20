@@ -5,8 +5,8 @@
 package mx.itson.canela.enumeradores;
 
 /**
- *
- * @author alumnog
+ * enumeradores de la dificultad de la receta
+ * @author Emmanuel Rivas
  */
 public enum Dificultad {
  
