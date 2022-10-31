@@ -4,12 +4,19 @@
  */
 package mx.itson.canela.enumeradores;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * enumeradores de la dificultad de la receta
  * @author Emmanuel Rivas
  */
 public enum Dificultad {
- 
-    FACIL, INTERMEDIO, DESAFIANTE
+    
+    @SerializedName("1")
+    FACIL,
+    @SerializedName("2")
+    INTERMEDIO,
+    @SerializedName("3")
+    DESAFIANTE
     
 }

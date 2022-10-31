@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import mx.itson.canela.entidades.Ingrediente;
 import mx.itson.canela.entidades.Paso;
 import mx.itson.canela.entidades.Receta;
+import mx.itson.canela.enumeradores.Dificultad;
 
 /**
  * Clase main del programa
@@ -44,6 +45,7 @@ public class Main extends javax.swing.JFrame {
         tblIngredientes = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPasos = new javax.swing.JTable();
+        lblDificultad = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +89,8 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblPasos);
 
+        lblDificultad.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,14 +105,19 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(lblDescripcion)
                     .addComponent(lblReceta)
                     .addComponent(jButton1)
-                    .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(109, 109, 109)
+                        .addComponent(lblDificultad)))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblDificultad))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
@@ -145,7 +154,13 @@ public class Main extends javax.swing.JFrame {
                
                lblReceta.setText(receta.getTitulo());
                lblDescripcion.setText(receta.getDescripcion());
-               
+               if(receta.getDificultad() == Dificultad.FACIL){
+                   lblDificultad.setText("FACIL");
+               }else if (receta.getDificultad() == Dificultad.INTERMEDIO){
+                   lblDificultad.setText("INTERMEDIO");
+               }else if (receta.getDificultad() == Dificultad.DESAFIANTE){
+                   lblDificultad.setText("DESAFIANTE");
+               }
                
                DefaultTableModel modelo = (DefaultTableModel) tblIngredientes.getModel();
                modelo.setRowCount(0);
@@ -209,6 +224,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblDificultad;
     private javax.swing.JLabel lblReceta;
     private javax.swing.JTable tblIngredientes;
     private javax.swing.JTable tblPasos;
